@@ -216,7 +216,7 @@ def push(ctx, s3path, localpath):
     observer.schedule(event_handler, path=localpath, recursive=True)
     observer.start()
     try:
-        while observer.isAlive():
+        while observer.is_alive():
             observer.join(1)
     except KeyboardInterrupt:
         observer.stop()
